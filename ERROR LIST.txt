@@ -1,0 +1,13 @@
+﻿ERROR FIX LOG:
+
+1.	Startup error: “Can’t set doctype here”
+a.	Fix: Delete <!DOCTYPE html>
+
+2.	Startup error: “Expected one of: <body>, <head>, <template>”
+a.	Fix: Delete/comment out HTML tags at lines 28 and 755
+
+3.	Display error: site  displays in text with no/missing images
+a.	Fix: Import downloaded files into same directory as the HTML.main file
+
+4.	Sourcemap error
+a.	Remove pound symbol from last line in both bootstrap.min.js and popper.js files
