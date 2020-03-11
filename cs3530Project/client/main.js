@@ -2,11 +2,21 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
+import './registrationNlogin.html';
+
+Router.configure({
+	layoutTemplate: 'main'
+});
+
+Router.configure({
+	layoutTemplate: 'registerNloginpage'
+});
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
 });
+
 
 Template.hello.helpers({
   counter() {
@@ -14,9 +24,14 @@ Template.hello.helpers({
   },
 });
 
+
 Template.hello.events({
   'click button'(event, instance) {
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+Router.route('/main/',function(){this.render('main');});
+Router.route('/registerNloginpage/',function(){this.render('registerNloginpage');});
+
