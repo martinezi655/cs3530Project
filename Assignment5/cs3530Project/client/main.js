@@ -48,4 +48,3 @@ Template.hello.events({
 
 Router.route('/main/',function(){this.render('main');});
 Router.route('/registerNloginpage/',function(){this.render('registerNloginpage');});
-
